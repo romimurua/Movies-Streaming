@@ -13,8 +13,6 @@ const passportConfigs = {
     secretOrKey: config.secretOrKey
 }
 
-
-//? done()
 passport.use(new Strategy(passportConfigs, (tokenDecoded, done) => {
     findUserById(tokenDecoded.id)
         .then(data => {
